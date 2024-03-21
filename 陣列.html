@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 陣列是物件的集合
+
+        const alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k']
+
+        // .length 取長度
+        document.write(`有 ${alphabets.length} 個字母<br>`)
+
+        // [索引] 取指定資料
+        document.write(alphabets[0] + '<br>')     // a
+        document.write(alphabets[3] + '<br>')     // d
+        document.write(alphabets[1000] + '<br>')  // undefined
+
+        // 一次列出所有值
+        for (let i = 0; i <= 6; i++) {
+            document.write(`${alphabets[i]}<br>`)
+        }
+
+        document.write(`<hr>`)
+
+        // 若數資料量巨多的時候，可以寫 i < alphabets.length ，因是從0開始起算，所以會總數量-1，故不寫成 i <= alphabets.length
+        for (let i = 0; i < alphabets.length; i++) {
+            document.write(`${alphabets[i]}<br>`)
+        }
+    </script>
+</body>
+
+</html>

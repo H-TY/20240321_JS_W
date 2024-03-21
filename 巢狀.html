@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const fruits = [
+            { name: 'apple', price: 50 },
+            { name: 'banana', price: 30 },
+            { name: 'orange', price: 70 },
+        ]
+        console.log(fruits)
+        console.table(fruits)
+
+        document.write('<ul>')
+        for (let i = 0; i < fruits.length; i++) {
+            document.write('<li>')
+            document.write(`${i + 1}個水果是${fruits[i].name}，價格是${fruits[i].price}`)
+            document.write('</li>')
+        }
+        document.write('</ul>')
+
+        document.write('<hr>')
+
+        const store = {
+            name: 'PChome',
+            url: 'https://24h.pchome.com.tw/',
+            products: [
+                { name: 'FutureLab Chair', price: 3499 },
+                { name: 'SHARP 55W LED light', price: 2888 },
+                { name: '【NIKE】AIR FORCE', price: 2099 }
+            ]
+        }
+
+        document.write('<table border="1">')
+
+        document.write('<caption>')
+        document.write(`<a href ="${store.url}">${store.name}</a >`)
+        document.write('</caption>')
+        for (let i = 0; i < store.products.length; i++) {
+            document.write('<tr>')
+            document.write(`<td>${store.products[i].name}</td>`)
+            document.write(`<td>${store.products[i].price}</td>`)
+            document.write('</tr>')
+        }
+        document.write('</table>')
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let numbers = [33, 75, 69, 41, 50, 19]
+
+        // 第一小題
+        for (let x in numbers) {
+            document.write(`第${parseInt(x) + 1}數字為${numbers[x]}<br>`)
+        }
+
+        document.write('<hr>')
+
+        // 老師解題：
+        for (const i in numbers) {
+            document.write(`第${i * 1 + 1}數字為${numbers[i]}<br>`)
+        }
+
+        document.write('<hr>')
+
+        //第二小題
+        //老師解題 方法1：
+        for (const i in numbers) {
+            if (numbers[i] === 41) {
+                document.write(`41 是第 ${i * 1 + 1}個字<br>`)
+                // 找到就停止迴圈
+                break
+            }
+        }
+
+        //老師解題 方法2：
+        // 陣列索引從 0 開始
+        // 假設 41 的索引是 -1，代表他不在陣列裡面
+        let index41 = -1
+        for (const i in numbers) {
+            if (numbers[i] === 41) {
+                index41 = i * 1 + 1
+                break
+            }
+        }
+        document.write(index41 === -1 ? '找不到 41 <br>' : `41是第 ${index41}個字<br>`)
+
+
+        //第三小題
+        let count_1 = 0
+        let count_2 = 0
+        for (let a of numbers) {
+            if (a % 2 === 0) {
+                count_2++
+            } else {
+                count_1++
+            }
+        }
+        document.write(`偶數有${count_2}個，奇數有${count_1}個`)
+
+
+        //第四小題
+        //老師解題：
+        let min = numbers[0]
+        // let max =
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

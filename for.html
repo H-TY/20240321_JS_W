@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const numbers = [70, 20, 13, 4]
+        // for(值 of 陣列)
+        for (const number of numbers) {
+            document.write(number + '<br>')
+        }
+
+        let bendons = ["雞排飯", "排骨飯", "魚排飯"];
+        for (let bendon of bendons) {
+            document.write(bendon + "<br>");
+        }
+
+        document.write('<hr>')
+
+        // for(索引 in 陣列或物件)
+        // 索引的資料型態是文字
+        for (const i in numbers) {
+            document.write(`第${i + 1}個 - 索引${i} - ${numbers[i]}<br>`)
+        }
+        // 印出後↓
+        // 第01個 - 索引0 - 1
+        // 第11個 - 索引1 - 2
+        // 第21個 - 索引2 - 3
+        // 第31個 - 索引3 - 4
+        // 可以知道 i 的值是文字型態
+
+        document.write('<hr>')
+
+        const obj = { a: 1, b: 2, c: 3 }
+        for (const key in obj) {
+            document.write(`${key}: ${obj[key]}<br>`)
+        }
+
+        document.write('<hr>')
+
+        const numbers2 = [7, 8, 3, 4]
+
+        // 用for of 無法修改值
+        for (const x of numbers2) {
+            x *= 100
+        }
+        document.write(numbers2 + "<br>");
+
+        // 用for in 可以修改值
+        for (const i in numbers2) {
+            numbers2[i] *= 100
+        }
+        document.write(numbers2 + "<br>");
+
+    </script>
+</body>
+
+</html>

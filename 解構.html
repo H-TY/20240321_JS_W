@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const array = [1, 2, 3, 4]
+        // const one = array[0]
+        // const two = array[1]
+        // ... 代表剩下的分配給 others(others這個詞可以自己命名，只要前面保留 ...)
+        let X = [one, two, ...others] = array
+        console.log(one)       // 1
+        console.log(two)       // 2
+        console.log(others)    // [3, 4]
+
+        const [three, four, ...apple] = array
+        console.log(three)       // 1
+        console.log(four)       // 2
+        console.log(apple)    // [3, 4]
+        // 解構是看資料型態，陣列物件是 reference，其他是 value
+        one = 100
+        console.log('oen', one)       // 100
+        console.log('array', array)   // [1, 2, 3, 4]
+
+        X[0] = 100
+        console.log('X', X)           // [100, 2, 3, 4]
+        console.log('array', array)   // [100, 2, 3, 4]
+
+        const obj = { a: 1, b: 2, c: 3, d: 4 }
+        // const a = obj.a
+        // const dog = obj.b
+        // 物件解構必須取跟 key 相同的名字，若有重複的 b 時，則需要用 : 重新命名b(自己命名) <ex>b: dog
+        // ...可以自己命名<ex>...banana
+        let { a, b: dog, ...banana } = obj
+        console.log(a)      // 1
+        console.log(dog)    // 2
+        console.log(banana) //{ c: 3, d: 4 }
+
+        a = 100
+        console.log(a)      // 100
+        console.log(obj)    //{a: 1, b: 2, c: 3, d: 4}
+
+        obj.a = 100
+        console.log(a)      // 100
+        console.log(obj)    // {a: 100, b: 2, c: 3, d: 4}
+
+
+
+    </script>
+</body>
+
+</html>

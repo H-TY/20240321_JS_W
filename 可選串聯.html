@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const user = {
+            name: 'AAA',
+            info: {
+                email: 'aaa@gmail.com'
+            }
+        }
+        console.log(user.name)                  // AAA
+        console.log(user.info.email)            // aaa@gmail.com
+        console.log(user.info.address)          // undefined
+        // console.log(user.info.address.city)  // 會有錯誤提示：Uncaught TypeError: Cannot read properties of undefined (reading 'city')
+        // 加上 ?. 可以避免上述出現的錯誤，也可以在keys詞的後面全部都加 ?.
+        console.log(user.info.address?.city)    // undefined
+
+
+        const products = [
+            {
+                name: 'iPhone 15',
+                price: 48900
+            },
+            {
+                name: 'iPhone 8',
+                price: 18900,
+                Brand: {
+                    maker: 'FFF',
+                    url: 'https://dinbendon.kento520.tw/index.php'
+                }
+            },
+            {
+                name: 'iPhone 1',
+                price: 2900,
+                Brand: {
+                    maker: 'RRR',
+                    url: 'https://developer.mozilla.org/zh-CN/'
+                }
+            }
+        ]
+
+        for (let i = 0; i < products.length; i++) {
+            document.write(`
+            <p>
+            ${products[i].name}，價格為 ${products[i].price}
+            製造商為
+            <a href="${products[i].Brand?.url || '#'}">${products[i].Brand?.maker || '不明'}</a>
+            </p>
+            `)
+        }
+
+
+    </script>
+</body>
+
+</html>
